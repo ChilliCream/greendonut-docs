@@ -1,0 +1,93 @@
+body {
+  background: #e7e1c9;
+  color: #464336;
+}
+
+.mainContainer,
+.navPusher,
+.navPusher>.docMainWrapper>.mainContainer {
+  background: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+  .navPusher> :first-child {
+    flex-grow: 0;
+  }
+  #footer {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}
+
+.button {
+  border-color: #7da22f;
+  color: #7da22f;
+}
+
+.docsNavContainer .toc .navBreadcrumb {
+  background: #b7b198;
+}
+
+.navBreadcrumb a,
+.navBreadcrumb span {
+  color: #464336;
+}
+
+.toc .toggleNav {
+  color: #464336;
+}
+
+.toc .toggleNav ul li a {
+  color: #464336;
+}
+
+.toc .toggleNav ul li.navListItemActive a,
+.toc .toggleNav ul li a:hover {
+  color: #7da22f;
+}
+
+.navigationSlider .slidingNav ul li a {
+  color: #464336;
+}
+
+.navigationSlider .slidingNav ul li a:hover,
+.navigationSlider .slidingNav ul li.siteNavItemActive a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive a {
+  color: #7da22f;
+}
+
+.nav-footer {
+  background: #b7b198;
+}
+
+.nav-footer .copyright {
+  color: #464336;
+  opacity: .4;
+}
+
+.nav-footer .sitemap h5 {
+  color: #464336;
+  font-size: 20px;
+}
+
+.nav-footer .sitemap a {
+  color: #464336;
+  opacity: .6;
+}
+
+.nav-footer .sitemap a:hover,
+.nav-footer .sitemap a:focus {
+  color: #464336;
+  opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: 400 !important;
+  color: #464336;
+}
