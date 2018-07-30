@@ -4,7 +4,7 @@
         <title>Green Donut Blog</title>
         <link>http://greendonut.io/blog</link>
         <description>The best place to stay up-to-date with the latest Green Donut news and events.</description>
-        <lastBuildDate>Sun, 13 May 2018 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Jul 2018 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,19 +14,12 @@
         </image>
         <copyright>Copyright © 2018 ChilliCream</copyright>
         <item>
-            <title><![CDATA[Releasing version 1.0.1]]></title>
-            <link>http://greendonut.io/blog/2018/05/13/1.0.1.html</link>
-            <guid>http://greendonut.io/blog/2018/05/13/1.0.1.html</guid>
-            <pubDate>Sun, 13 May 2018 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>Yeah, our first patch is on its way ;-)</p>
-]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Releasing version 1.0.0]]></title>
-            <link>http://greendonut.io/blog/2018/05/03/1.0.0.html</link>
-            <guid>http://greendonut.io/blog/2018/05/03/1.0.0.html</guid>
-            <pubDate>Thu, 03 May 2018 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>Today we proudly released the first version of <em>React Rasta</em>.</p>
+            <title><![CDATA[Releasing version 0.2.0]]></title>
+            <link>http://greendonut.io/blog/2018/07/30/0.2.0.html</link>
+            <guid>http://greendonut.io/blog/2018/07/30/0.2.0.html</guid>
+            <pubDate>Mon, 30 Jul 2018 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Today we proudly released the first version of <em>Green Donut</em> a <em>DataLoader</em> implementation for <em>.net
+core</em> and <em>classic</em>.</p>
 ]]></description>
         </item>
     </channel>

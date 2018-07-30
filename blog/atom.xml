@@ -2,32 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://greendonut.io/blog</id>
     <title>Green Donut Blog</title>
-    <updated>2018-05-13T06:00:00Z</updated>
+    <updated>2018-07-30T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="http://greendonut.io/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Green Donut news and events.</subtitle>
     <logo>http://greendonut.io/img/signet.svg</logo>
     <rights>Copyright © 2018 ChilliCream</rights>
     <entry>
-        <title type="html"><![CDATA[Releasing version 1.0.1]]></title>
-        <id>http://greendonut.io/blog/2018/05/13/1.0.1.html</id>
-        <link href="http://greendonut.io/blog/2018/05/13/1.0.1.html">
+        <title type="html"><![CDATA[Releasing version 0.2.0]]></title>
+        <id>http://greendonut.io/blog/2018/07/30/0.2.0.html</id>
+        <link href="http://greendonut.io/blog/2018/07/30/0.2.0.html">
         </link>
-        <updated>2018-05-13T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<p>Yeah, our first patch is on its way ;-)</p>
-]]></summary>
-        <author>
-            <name>Rafael Staib</name>
-            <uri>https://github.com/rstaib</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Releasing version 1.0.0]]></title>
-        <id>http://greendonut.io/blog/2018/05/03/1.0.0.html</id>
-        <link href="http://greendonut.io/blog/2018/05/03/1.0.0.html">
-        </link>
-        <updated>2018-05-03T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<p>Today we proudly released the first version of <em>React Rasta</em>.</p>
+        <updated>2018-07-30T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>Today we proudly released the first version of <em>Green Donut</em> a <em>DataLoader</em> implementation for <em>.net
+core</em> and <em>classic</em>.</p>
 ]]></summary>
         <author>
             <name>Rafael Staib</name>
