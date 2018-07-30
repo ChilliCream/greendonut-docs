@@ -8,11 +8,17 @@
     "caching": "Caching",
     "custom-cache": "How to implement a custom cache",
     "custom-dataloader": "Custom DataLoader",
+    "dataloader-interface": "IDataLoader<TKey, TValue>",
+    "dispatchabledataloader-interface": "IDispatchableDataLoader",
+    "installation": "Installation",
     "introduction": "Introduction",
     "usage-with-graphql": "Usage with GraphQL",
+    "usage": "Usage",
     "Docs": "Docs",
+    "Blog": "Blog",
     "GitHub": "GitHub",
     "Quickstart": "Quickstart",
+    "API": "API",
     "Advanced Concepts": "Advanced Concepts"
   },
   "pages-strings": {

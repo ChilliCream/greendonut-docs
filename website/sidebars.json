@@ -1,6 +1,7 @@
 {
   "docs": {
-    "Quickstart": ["introduction", "installation"],
+    "Quickstart": ["introduction", "installation", "usage"],
+    "API": ["dataloader-interface", "dispatchabledataloader-interface"],
     "Advanced Concepts": ["custom-dataloader"]
   }
 }
