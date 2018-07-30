@@ -6,7 +6,10 @@
 <url> <loc>http://greendonut.io/docs/caching.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/caching.html" /> </url>
 <url> <loc>http://greendonut.io/docs/custom-cache.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/custom-cache.html" /> </url>
 <url> <loc>http://greendonut.io/docs/custom-dataloader.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/custom-dataloader.html" /> </url>
+<url> <loc>http://greendonut.io/docs/dataloader-interface.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/dataloader-interface.html" /> </url>
+<url> <loc>http://greendonut.io/docs/dispatchabledataloader-interface.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/dispatchabledataloader-interface.html" /> </url>
 <url> <loc>http://greendonut.io/docs/installation.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/installation.html" /> </url>
 <url> <loc>http://greendonut.io/docs/introduction.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/introduction.html" /> </url>
 <url> <loc>http://greendonut.io/docs/usage-with-graphql.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/usage-with-graphql.html" /> </url>
+<url> <loc>http://greendonut.io/docs/usage.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/usage.html" /> </url>
 </urlset>
