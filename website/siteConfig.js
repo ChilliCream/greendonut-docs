@@ -15,13 +15,13 @@ const siteConfig = {
   url: "http://greendonut.io",
   cname: "greendonut.io",
   baseUrl: "/",
-  gaTrackingId: "UA-72800164-3",
+  gaTrackingId: "UA-72800164-4",
   projectName: "greendonut-docs",
   organizationName: "chillicream",
   repoUrl,
   headerLinks: [
     { doc: "introduction", label: "Docs" },
-    //{ blog: false/*, label: "Blog"*/ },
+    { blog: true, label: "Blog" },
     //{ search: false },
     { href: repoUrl, label: "GitHub" }
   ],

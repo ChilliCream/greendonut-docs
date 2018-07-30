@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Quickstart": ["introduction"],
+    "Quickstart": ["introduction", "installation"],
     "Advanced Concepts": ["custom-dataloader"]
   }
 }
