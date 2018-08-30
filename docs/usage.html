@@ -22,6 +22,10 @@
                 var toggler = document.querySelector(togglerSelector);
                 var target = document.querySelector(targetSelector);
 
+                if (!toggler) {
+                  return;
+                }
+
                 toggler.onclick = function(event) {
                   event.preventDefault();
 
@@ -33,11 +37,11 @@
 is part of the <em>GreenDonut</em> package. We really tried to keep the <em>API</em> of <em>DataLoaders</em> congruent to
 the <a href="https://github.com/facebook/dataloader">original facebook implementation which is written in JavaScript</a>,
 but without making the experience for us .net developers weird.</p>
-<pre><code class="hljs css languages- csharp"><span class="hljs-keyword">var</span> userLoader = <span class="hljs-keyword">new</span> DataLoader&lt;<span class="hljs-keyword">string</span>, User&gt;(keys =&gt; FetchUsers(keys));
+<pre><code class="hljs css language-csharp"><span class="hljs-keyword">var</span> userLoader = <span class="hljs-keyword">new</span> DataLoader&lt;<span class="hljs-keyword">string</span>, User&gt;(keys =&gt; FetchUsers(keys));
 </code></pre>
 <p>In order to change the default behavior of the <code>DataLoader</code>, we have to create a new instance of
 <code>DataLoaderOptions</code> and pass it right into the <code>DataLoader</code>. Let us see how it would look like.</p>
-<pre><code class="hljs css languages- csharp"><span class="hljs-keyword">var</span> options = <span class="hljs-keyword">new</span> DataLoaderOptions&lt;<span class="hljs-keyword">string</span>&gt;
+<pre><code class="hljs css language-csharp"><span class="hljs-keyword">var</span> options = <span class="hljs-keyword">new</span> DataLoaderOptions&lt;<span class="hljs-keyword">string</span>&gt;
 {
     SlidingExpiration = TimeSpan.FromHours(<span class="hljs-number">1</span>)
 };
@@ -45,7 +49,7 @@ but without making the experience for us .net developers weird.</p>
 </code></pre>
 <p>In most cases it is enough to use the <code>LoadAsync</code> method to load data and let the <code>DataLoader</code>
 handle/manage the cache internally.</p>
-<pre><code class="hljs css languages- csharp"><span class="hljs-keyword">var</span> userLoader = <span class="hljs-keyword">new</span> DataLoader&lt;<span class="hljs-keyword">string</span>, User&gt;(keys =&gt; FetchUsers(keys));
+<pre><code class="hljs css language-csharp"><span class="hljs-keyword">var</span> userLoader = <span class="hljs-keyword">new</span> DataLoader&lt;<span class="hljs-keyword">string</span>, User&gt;(keys =&gt; FetchUsers(keys));
 <span class="hljs-keyword">var</span> users = <span class="hljs-keyword">await</span> userLoader.LoadAsync(<span class="hljs-keyword">new</span>[] { <span class="hljs-string">"user-key-1"</span>, <span class="hljs-string">"user-key-2"</span>, <span class="hljs-string">"user-key-N"</span> });
 </code></pre>
 <p><strong>Note</strong></p>

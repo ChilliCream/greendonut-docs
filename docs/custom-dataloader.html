@@ -22,6 +22,10 @@
                 var toggler = document.querySelector(togglerSelector);
                 var target = document.querySelector(targetSelector);
 
+                if (!toggler) {
+                  return;
+                }
+
                 toggler.onclick = function(event) {
                   event.preventDefault();
 
@@ -36,7 +40,7 @@ reasons.</p>
 brevity</li>
 </ol>
 <p><strong>Interface</strong></p>
-<pre><code class="hljs css languages- csharp">public interface IUserDataLoader
+<pre><code class="hljs css language-csharp">public interface IUserDataLoader
     : IDataLoader&lt;string, User&gt;
 { }
 </code></pre>
@@ -48,7 +52,7 @@ for instance.</li>
 </ul>
 </blockquote>
 <p><strong>Implementation</strong></p>
-<pre><code class="hljs css languages- csharp">public class UserDataLoader
+<pre><code class="hljs css language-csharp">public class UserDataLoader
     : DataLoaderBase&lt;string, User&gt;
 {
     protected override Task&lt;IReadOnlyList&lt;Result&lt;User&gt;&gt;&gt; Fetch(IReadOnlyList&lt;string&gt; keys)
@@ -61,7 +65,7 @@ for instance.</li>
 <li>Custom <em>DataLoader</em> Logic</li>
 </ol>
 <p><strong>Implementation</strong></p>
-<pre><code class="hljs css languages- csharp">public class UserDataLoader
+<pre><code class="hljs css language-csharp">public class UserDataLoader
     : IDataLoader&lt;string, User&gt;
 {
     public IDataLoader&lt;TKey, TValue&gt; Clear()
