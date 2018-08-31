@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>http://greendonut.io/index.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/en/index.html" /> </url>
-<url> <loc>http://greendonut.io/blog/2018/08/30/1.0.0.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>http://greendonut.io/blog/2018/07/30/0.2.0.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>http://greendonut.io/docs/batching.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/batching.html" /> </url>
-<url> <loc>http://greendonut.io/docs/caching.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/caching.html" /> </url>
-<url> <loc>http://greendonut.io/docs/custom-cache.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/custom-cache.html" /> </url>
-<url> <loc>http://greendonut.io/docs/custom-dataloader.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/custom-dataloader.html" /> </url>
-<url> <loc>http://greendonut.io/docs/dataloader-interface.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/dataloader-interface.html" /> </url>
-<url> <loc>http://greendonut.io/docs/dispatchabledataloader-interface.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/dispatchabledataloader-interface.html" /> </url>
-<url> <loc>http://greendonut.io/docs/installation.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/installation.html" /> </url>
-<url> <loc>http://greendonut.io/docs/introduction.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/introduction.html" /> </url>
-<url> <loc>http://greendonut.io/docs/usage-with-graphql.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/usage-with-graphql.html" /> </url>
-<url> <loc>http://greendonut.io/docs/usage.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://greendonut.io/docs/usage.html" /> </url>
+<url> <loc>https://greendonut.io/index</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/en/index" /> </url>
+<url> <loc>https://greendonut.io/blog/2018/08/30/1.0.0</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://greendonut.io/blog/2018/07/30/0.2.0</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://greendonut.io/docs/batching</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/batching" /> </url>
+<url> <loc>https://greendonut.io/docs/caching</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/caching" /> </url>
+<url> <loc>https://greendonut.io/docs/custom-cache</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/custom-cache" /> </url>
+<url> <loc>https://greendonut.io/docs/custom-dataloader</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/custom-dataloader" /> </url>
+<url> <loc>https://greendonut.io/docs/dataloader-interface</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/dataloader-interface" /> </url>
+<url> <loc>https://greendonut.io/docs/dispatchabledataloader-interface</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/dispatchabledataloader-interface" /> </url>
+<url> <loc>https://greendonut.io/docs/installation</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/installation" /> </url>
+<url> <loc>https://greendonut.io/docs/introduction</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/introduction" /> </url>
+<url> <loc>https://greendonut.io/docs/usage-with-graphql</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/usage-with-graphql" /> </url>
+<url> <loc>https://greendonut.io/docs/usage</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://greendonut.io/docs/usage" /> </url>
 </urlset>
