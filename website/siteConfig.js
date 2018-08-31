@@ -12,18 +12,26 @@ const repoUrl = "https://github.com/ChilliCream/greendonut";
 const siteConfig = {
   title: "Green Donut",
   tagline: "A DataLoader implementation for .net core and classic",
-  url: "http://greendonut.io",
+  url: "https://greendonut.io",
   cname: "greendonut.io",
   baseUrl: "/",
   gaTrackingId: "UA-72800164-4",
   projectName: "greendonut-docs",
   organizationName: "chillicream",
   repoUrl,
-  headerLinks: [
-    { doc: "introduction", label: "Docs" },
-    { blog: true, label: "Blog" },
+  headerLinks: [{
+      doc: "introduction",
+      label: "Docs"
+    },
+    {
+      blog: true,
+      label: "Blog"
+    },
     //{ search: false },
-    { href: repoUrl, label: "GitHub" }
+    {
+      href: repoUrl,
+      label: "GitHub"
+    }
   ],
   headerIcon: "img/signet.svg",
   footerIcon: "img/signet.svg",
@@ -44,7 +52,8 @@ const siteConfig = {
     theme: "atelier-dune-light"
   },
   scripts: ["https://buttons.github.io/buttons.js"],
-  onPageNav: "separate"
+  onPageNav: "separate",
+  cleanUrl: true
 };
 
 module.exports = siteConfig;
