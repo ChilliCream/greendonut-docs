@@ -13,6 +13,7 @@ body {
   .navPusher> :first-child {
     flex-grow: 0;
   }
+
   #footer {
     flex-grow: 1;
     flex-shrink: 0;
@@ -62,7 +63,10 @@ body {
 
 .nav-footer .copyright {
   color: #464336;
-  opacity: .4;
+}
+
+.nav-footer .copyright a {
+  color: #d51616;
 }
 
 .nav-footer .sitemap h5 {

@@ -8,6 +8,7 @@
 // See https://docusaurus.io/docs/site-config.html for all the possible
 
 const repoUrl = "https://github.com/ChilliCream/greendonut";
+const organizationUrl = "https://chillicream.com";
 
 const siteConfig = {
   title: "Green Donut",
@@ -18,13 +19,15 @@ const siteConfig = {
   gaTrackingId: "UA-72800164-4",
   projectName: "greendonut-docs",
   organizationName: "chillicream",
+  organizationTitle: "ChilliCream",
+  organizationUrl,
   repoUrl,
   headerLinks: [{
       doc: "introduction",
       label: "Docs"
     },
     {
-      blog: true,
+      href: `${organizationUrl}/blog`,
       label: "Blog"
     },
     //{ search: false },
@@ -41,7 +44,7 @@ const siteConfig = {
     secondaryColor: "#e7e1c9"
   },
   stylesheets: ["https://fonts.googleapis.com/css?family=Luckiest+Guy:700,400"],
-  copyright: "Copyright © " + new Date().getFullYear() + " ChilliCream",
+  copyright: `Copyright © ${new Date().getFullYear()}`,
   editUrl: "https://github.com/ChilliCream/greendonut-docs/edit/master/docs/",
   /*algolia: {
     apiKey: "bf33c17016c2932f4993e27c5d3aba72",
