@@ -9,6 +9,7 @@
 
 const repoUrl = "https://github.com/ChilliCream/greendonut";
 const organizationUrl = "https://chillicream.com";
+const blogUrl = organizationUrl + "/blog";
 
 const siteConfig = {
   title: "Green Donut",
@@ -16,18 +17,19 @@ const siteConfig = {
   url: "https://greendonut.io",
   cname: "greendonut.io",
   baseUrl: "/",
+  blogUrl,
+  repoUrl,
   gaTrackingId: "UA-72800164-4",
   projectName: "greendonut-docs",
   organizationName: "chillicream",
   organizationTitle: "ChilliCream",
   organizationUrl,
-  repoUrl,
   headerLinks: [{
       doc: "introduction",
       label: "Docs"
     },
     {
-      href: `${organizationUrl}/blog`,
+      href: blogUrl,
       label: "Blog"
     },
     //{ search: false },
@@ -56,6 +58,9 @@ const siteConfig = {
   },
   scripts: ["https://buttons.github.io/buttons.js"],
   onPageNav: "separate",
+  twitter: true,
+  twitterUsername: "Chilli_Cream",
+  twitterImage: "img/cupcake.png",
   cleanUrl: true
 };
 
