@@ -75,7 +75,7 @@ class Footer extends React.Component {
         </section>
         <section className="copyright">
           {this.props.config.copyright}&nbsp;
-          <a href={this.props.config.organizationUrl}>{this.props.config.organizationTitle}</a>
+          <a href={this.props.config.organizationUrl} target="_blank">{this.props.config.organizationTitle}</a>
         </section>
       </footer>
     );

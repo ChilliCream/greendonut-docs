@@ -4,22 +4,48 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "A DataLoader implementation for .net core and classic",
-    "batching": "Batching",
-    "caching": "Caching",
-    "custom-cache": "How to implement a custom cache",
-    "custom-dataloader": "Custom DataLoader",
-    "dataloader-interface": "IDataLoader<TKey, TValue>",
-    "dispatchabledataloader-interface": "IDispatchableDataLoader",
-    "installation": "Installation",
-    "introduction": "Introduction",
-    "usage-with-graphql": "Usage with GraphQL",
-    "usage": "Usage",
-    "Docs": "Docs",
-    "Blog": "Blog",
-    "GitHub": "GitHub",
-    "Quickstart": "Quickstart",
-    "API": "API",
-    "Advanced Concepts": "Advanced Concepts"
+    "docs": {
+      "batching": {
+        "title": "Batching"
+      },
+      "caching": {
+        "title": "Caching"
+      },
+      "custom-cache": {
+        "title": "How to implement a custom cache"
+      },
+      "custom-dataloader": {
+        "title": "Custom DataLoader"
+      },
+      "dataloader-interface": {
+        "title": "IDataLoader<TKey, TValue>"
+      },
+      "dispatchabledataloader-interface": {
+        "title": "IDispatchableDataLoader"
+      },
+      "installation": {
+        "title": "Installation"
+      },
+      "introduction": {
+        "title": "Introduction"
+      },
+      "usage-with-graphql": {
+        "title": "Usage with GraphQL"
+      },
+      "usage": {
+        "title": "Usage"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "Blog": "Blog",
+      "GitHub": "GitHub"
+    },
+    "categories": {
+      "Quickstart": "Quickstart",
+      "API": "API",
+      "Advanced Concepts": "Advanced Concepts"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
