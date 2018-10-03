@@ -27,6 +27,7 @@ public interface IUserDataLoader
 ```csharp
 public class UserDataLoader
     : DataLoaderBase<string, User>
+    , IUserDataLoader
 {
     protected override Task<IReadOnlyList<Result<User>>> Fetch(IReadOnlyList<string> keys)
     {
