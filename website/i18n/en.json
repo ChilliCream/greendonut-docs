@@ -5,15 +5,6 @@
     "previous": "Previous",
     "tagline": "A DataLoader implementation for .net core and classic",
     "docs": {
-      "batching": {
-        "title": "Batching"
-      },
-      "caching": {
-        "title": "Caching"
-      },
-      "custom-cache": {
-        "title": "How to implement a custom cache"
-      },
       "custom-dataloader": {
         "title": "Custom DataLoader"
       },
@@ -29,11 +20,29 @@
       "introduction": {
         "title": "Introduction"
       },
-      "usage-with-graphql": {
-        "title": "Usage with GraphQL"
-      },
       "usage": {
         "title": "Usage"
+      },
+      "version-1.0.0-custom-dataloader": {
+        "title": "Custom DataLoader"
+      },
+      "version-1.0.0-dataloader-interface": {
+        "title": "IDataLoader<TKey, TValue>"
+      },
+      "version-1.0.0-dispatchabledataloader-interface": {
+        "title": "IDispatchableDataLoader"
+      },
+      "version-1.0.0-installation": {
+        "title": "Installation"
+      },
+      "version-1.0.0-introduction": {
+        "title": "Introduction"
+      },
+      "version-1.0.0-usage": {
+        "title": "Usage"
+      },
+      "version-1.1.0-dataloader-interface": {
+        "title": "IDataLoader<TKey, TValue>"
       }
     },
     "links": {

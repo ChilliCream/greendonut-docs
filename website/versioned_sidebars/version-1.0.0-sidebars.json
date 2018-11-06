@@ -1,0 +1,16 @@
+{
+  "version-1.0.0-docs": {
+    "Quickstart": [
+      "version-1.0.0-introduction",
+      "version-1.0.0-installation",
+      "version-1.0.0-usage"
+    ],
+    "API": [
+      "version-1.0.0-dataloader-interface",
+      "version-1.0.0-dispatchabledataloader-interface"
+    ],
+    "Advanced Concepts": [
+      "version-1.0.0-custom-dataloader"
+    ]
+  }
+}

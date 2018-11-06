@@ -95,3 +95,8 @@ h6 {
   font-weight: 400 !important;
   color: #464336;
 }
+
+.fixedHeaderContainer>.headerWrapper>header h2,
+.fixedHeaderContainer>.headerWrapper>header h3 {
+  color: #464336;
+}
