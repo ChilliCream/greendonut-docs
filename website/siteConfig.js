@@ -21,6 +21,7 @@ const siteConfig = {
   repoUrl,
   gaTrackingId: "UA-72800164-4",
   projectName: "greendonut-docs",
+  realProjectName: "greendonut",
   organizationName: "chillicream",
   organizationTitle: "ChilliCream",
   organizationUrl,

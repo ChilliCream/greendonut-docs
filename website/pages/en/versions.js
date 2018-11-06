@@ -36,7 +36,7 @@ function Versions() {
                   <a href="/docs/introduction">Documentation</a>
                 </td>
                 <td>
-                  <a href={`https://github.com/ChilliCream/greendonut/releases/tag/${latestVersion}`}>Release Notes</a>
+                  <a href={`https://github.com/${siteConfig.organizationName}/${siteConfig.realProjectName}/releases/tag/${latestVersion}`}>Release Notes</a>
                 </td>
               </tr>
             </tbody>
@@ -69,7 +69,7 @@ function Versions() {
                         <a href={`/docs/${version}/introduction`}>Documentation</a>
                       </td>
                       <td>
-                        <a href={`https://github.com/ChilliCream/greendonut/releases/tag/${version}`}>Release Notes</a>
+                        <a href={`https://github.com/${siteConfig.organizationName}/${siteConfig.realProjectName}/releases/tag/${version}`}>Release Notes</a>
                       </td>
                     </tr>
                   ),
