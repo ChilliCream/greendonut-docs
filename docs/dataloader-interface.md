@@ -48,11 +48,19 @@ requests which were not cached for bacthing if enabled.
 
 **Description:** Removes a single entry from the cache.
 
-**Return Value:** `TIDataLoader<TKey, TValue>ask`
+**Return Value:** `IDataLoader<TKey, TValue>`
 
 ---
 
 ### `Set(TKey key, TValue value)`
+
+**Description:** Adds a new entry to the cache if not already exists.
+
+**Return Value:** `IDataLoader<TKey, TValue>`
+
+---
+
+### `Set(TKey key, Task<TValue> value)`
 
 **Description:** Adds a new entry to the cache if not already exists.
 
