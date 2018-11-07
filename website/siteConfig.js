@@ -36,12 +36,12 @@ const siteConfig = {
       label: "Blog",
       external: true
     },
-    //{ search: false },
     {
       href: repoUrl,
       label: "GitHub",
       external: true
-    }
+    },
+    { search: false }
   ],
   headerIcon: "img/signet.svg",
   footerIcon: "img/signet.svg",
