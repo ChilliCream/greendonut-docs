@@ -56,10 +56,10 @@ const siteConfig = {
   ],
   copyright: `Copyright © ${new Date().getFullYear()}`,
   editUrl: "https://github.com/ChilliCream/greendonut-docs/edit/master/docs/",
-  /*algolia: {
-    apiKey: "bf33c17016c2932f4993e27c5d3aba72",
-    indexName: "..."
-  },*/
+  algolia: {
+    apiKey: "f0ea26f0ddddbae1dde6deb9213b0bb1",
+    indexName: "greendonut"
+  },
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: "atelier-dune-light"
