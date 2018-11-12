@@ -25,8 +25,7 @@ const siteConfig = {
   organizationName: "chillicream",
   organizationTitle: "ChilliCream",
   organizationUrl,
-  headerLinks: [
-    {
+  headerLinks: [{
       doc: "introduction",
       href: "/docs",
       label: "Docs"
@@ -41,7 +40,9 @@ const siteConfig = {
       label: "GitHub",
       external: true
     },
-    { search: false }
+    {
+      search: false
+    }
   ],
   headerIcon: "img/signet.svg",
   footerIcon: "img/signet.svg",
@@ -60,7 +61,7 @@ const siteConfig = {
     apiKey: "f0ea26f0ddddbae1dde6deb9213b0bb1",
     indexName: "greendonut",
     algoliaOptions: {
-      facetFilters: ["language:$LANGUAGE", "version:$VERSION"],
+      facetFilters: ["language:LANGUAGE", "version:VERSION"],
     },
   },
   highlight: {
