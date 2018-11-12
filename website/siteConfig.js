@@ -58,7 +58,10 @@ const siteConfig = {
   editUrl: "https://github.com/ChilliCream/greendonut-docs/edit/master/docs/",
   algolia: {
     apiKey: "f0ea26f0ddddbae1dde6deb9213b0bb1",
-    indexName: "greendonut"
+    indexName: "greendonut",
+    algoliaOptions: {
+      facetFilters: ["language:$LANGUAGE", "version:$VERSION"],
+    },
   },
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
