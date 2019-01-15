@@ -63,12 +63,18 @@ events.</li>
 <pre><code class="hljs css language-csharp"><span class="hljs-keyword">using</span> System;
 <span class="hljs-keyword">using</span> System.Collections.Concurrent;
 <span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Diagnostics;
 <span class="hljs-keyword">using</span> Microsoft.Extensions.DiagnosticAdapter;
 
 <span class="hljs-keyword">namespace</span> <span class="hljs-title">Demo</span>
 {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DispatchingListener</span>
+        : <span class="hljs-title">DiagnosticListener</span>
     {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DispatchingListener</span>(<span class="hljs-params"></span>)
+            : <span class="hljs-title">base</span>(<span class="hljs-params"><span class="hljs-string">"GreenDonut.Dispatching"</span></span>)</span>
+        { }
+
         <span class="hljs-comment">// here you see the complete set of diagnostic events we can listen to.</span>
         <span class="hljs-comment">// here we add just those events we want to listen to.</span>
         <span class="hljs-comment">// for example if we are not interested to get informed about values loaded from the cache</span>
@@ -135,7 +141,7 @@ namespace Demo
 
         public void OnNext(DiagnosticListener value)
         {
-            if (value.Name == "GreenDonut.Dispatching")
+            if (value.Name == _listener.Name)
             {
                 value.SubscribeWithAdapter(_listener);
             }
@@ -158,11 +164,12 @@ subscription.Dispose();
 <blockquote>
 <ul>
 <li>Remember to dispose your subscription if you would like to stop listening to diagnostic events.</li>
-<li>Keep in mind that this code is not production ready. It is meant to give you an idea how it
-works.</li>
+<li>Keep in mind that this code is not production ready. It is meant to give you an idea how it</li>
 </ul>
 </blockquote>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-11-7 by Rafael Staib</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/custom-dataloader"><span class="arrow-prev">← </span><span class="function-name-prevnext">Custom DataLoader</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/signet.svg" alt="Green Donut" width="64" height="64"/></a><div><h5>Docs</h5><a href="/docs/introduction.html">Quickstart</a><a href="/docs/dataloader-interface.html">API</a><a href="/docs/custom-dataloader.html">Advanced Concepts</a></div><div><h5>Community</h5><a href="https://twitter.com/Chilli_Cream" target="_blank" rel="noreferrer noopener">Follow us on Twitter</a><a href="http://stackoverflow.com/questions/tagged/greendonut" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="https://chillicream.com/blog" target="_blank">Blog</a><a href="https://github.com/ChilliCream/greendonut" target="_blank">GitHub</a><a href="https://github.com/ChilliCream/greendonut/issues" target="_blank">Issues</a><a class="github-button" href="https://github.com/ChilliCream/greendonut" data-icon="octicon-star" data-count-href="/chillicream/greendonut/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 <a href="https://chillicream.com" target="_blank">ChilliCream</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+<pre><code class="hljs">works.
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-1-15 by Rafael Staib</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/custom-dataloader"><span class="arrow-prev">← </span><span class="function-name-prevnext">Custom DataLoader</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/signet.svg" alt="Green Donut" width="64" height="64"/></a><div><h5>Docs</h5><a href="/docs/introduction.html">Quickstart</a><a href="/docs/dataloader-interface.html">API</a><a href="/docs/custom-dataloader.html">Advanced Concepts</a></div><div><h5>Community</h5><a href="https://twitter.com/Chilli_Cream" target="_blank" rel="noreferrer noopener">Follow us on Twitter</a><a href="http://stackoverflow.com/questions/tagged/greendonut" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="https://chillicream.com/blog" target="_blank">Blog</a><a href="https://github.com/ChilliCream/greendonut" target="_blank">GitHub</a><a href="https://github.com/ChilliCream/greendonut/issues" target="_blank">Issues</a><a class="github-button" href="https://github.com/ChilliCream/greendonut" data-icon="octicon-star" data-count-href="/chillicream/greendonut/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 <a href="https://chillicream.com" target="_blank">ChilliCream</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
