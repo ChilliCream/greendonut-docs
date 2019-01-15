@@ -33,12 +33,18 @@ First we implement the Listener.
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.Extensions.DiagnosticAdapter;
 
 namespace Demo
 {
     public class DispatchingListener
+        : DiagnosticListener
     {
+        public DispatchingListener()
+            : base("GreenDonut.Dispatching")
+        { }
+
         // here you see the complete set of diagnostic events we can listen to.
         // here we add just those events we want to listen to.
         // for example if we are not interested to get informed about values loaded from the cache
@@ -108,7 +114,7 @@ namespace Demo
 
         public void OnNext(DiagnosticListener value)
         {
-            if (value.Name == "GreenDonut.Dispatching")
+            if (value.Name == _listener.Name)
             {
                 value.SubscribeWithAdapter(_listener);
             }
@@ -133,4 +139,5 @@ subscription.Dispose();
 
 > - Remember to dispose your subscription if you would like to stop listening to diagnostic events.
 > - Keep in mind that this code is not production ready. It is meant to give you an idea how it
+
     works.

@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A DataLoader implementation for .net core and classic",
+    "tagline": "A port of facebook's DataLoader utility, written in C# for .NET Core and .NET Framework.",
     "docs": {
       "custom-dataloader": {
         "title": "Custom DataLoader"
@@ -13,9 +13,6 @@
       },
       "diagnostics": {
         "title": "Diagnostic Events"
-      },
-      "dispatchabledataloader-interface": {
-        "title": "IDispatchableDataLoader"
       },
       "installation": {
         "title": "Installation"

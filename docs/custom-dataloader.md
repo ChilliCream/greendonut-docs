@@ -3,13 +3,13 @@ id: custom-dataloader
 title: Custom DataLoader
 ---
 
-There are various reasons to create a custom _DataLoader_ and we will describe here the most common
-reasons.
+A custom _DataLoader_ is a class that derives from `DataLoaderBase<TKey, TValue>` and implements
+`FetchData`. This is very useful, not just in _DI_ (Dependency Injection) scenarios, because the
+data fetching logic is definded inside the custom _DataLoader_ itself; therefore, must not be
+provided repeatedly when creating new instances.
 
-1.  Dedicated interface and implementation for _DI_ (Dependency Injection), better readability and
-    brevity
-
-**Interface**
+Creating a custom _DataLoader_ is not that difficult. First of all we _should_ create a dedicated
+marker interface for separation purposes.
 
 ```csharp
 public interface IUserDataLoader
@@ -17,12 +17,15 @@ public interface IUserDataLoader
 { }
 ```
 
-**Note**
+Although the extra interface `IUserDataLoader` isn't necessarily required, we strongly recommend to
+create an extra interface in this particular case because of several reasons. One reason is you
+might have a handful of _DataLoader_ which implemanting a completely different data fetching logic,
+but from the outside they look identic due to their identic type parameter list. That's why we
+should always create a separate interface for each _DataLoader_. We just mentioned one reason here
+because the explanation would go beyond the scope of custom _DataLoader_.
 
-> - Also derive from the `IDispatchableDataLoader` interface if needed because of manual dispatching
->   for instance.
-
-**Implementation**
+Last but not least, we have to create a new class deriving from `DataLoaderBase<TKey, TValue>` and
+implementing our marker interface.
 
 ```csharp
 public class UserDataLoader
@@ -31,51 +34,7 @@ public class UserDataLoader
 {
     protected override Task<IReadOnlyList<Result<User>>> Fetch(IReadOnlyList<string> keys)
     {
-        // Here goes our implementation for data fetching
+        // Here goes our data fetching logic
     }
 }
 ```
-
-2.  Custom _DataLoader_ Logic
-
-**Implementation**
-
-```csharp
-public class UserDataLoader
-    : IDataLoader<string, User>
-{
-    public IDataLoader<TKey, TValue> Clear()
-    {
-        // Here goes our logic
-    }
-
-    public Task<TValue> LoadAsync(TKey key)
-    {
-        // Here goes our logic
-    }
-
-    public Task<IReadOnlyList<TValue>> LoadAsync(params TKey[] keys)
-    {
-        // Here goes our logic
-    }
-
-    public Task<IReadOnlyList<TValue>> LoadAsync(IReadOnlyCollection<TKey> keys)
-    {
-        // Here goes our logic
-    }
-
-    public IDataLoader<TKey, TValue> Remove(TKey key)
-    {
-        // Here goes our logic
-    }
-
-    public IDataLoader<TKey, TValue> Set(TKey key, Task<TValue> value)
-    {
-        // Here goes our logic
-    }
-}
-```
-
-**Note**
-
-> - For manual dispatching support implement the `IDispatchableDataLoader` interface.

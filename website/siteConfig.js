@@ -13,7 +13,7 @@ const blogUrl = organizationUrl + "/blog";
 
 const siteConfig = {
   title: "Green Donut",
-  tagline: "A DataLoader implementation for .net core and classic",
+  tagline: "A port of facebook's DataLoader utility, written in C# for .NET Core and .NET Framework.",
   url: "https://greendonut.io",
   cname: "greendonut.io",
   baseUrl: "/",

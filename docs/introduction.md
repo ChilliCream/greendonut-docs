@@ -3,13 +3,19 @@ id: introduction
 title: Introduction
 ---
 
-_Green Donut_ is a _DataLoader_ implementation for _.net core_ and _classic_.
-
-_Green Donut_ is easy to use and has a small footprint. _Facebook_ describes _DataLoaders_ as
-follows:
+**Green Donut** is a port of _facebook's_ _DataLoader_ utility, written in C# for .NET Core and .NET
+Framework.
 
 > DataLoader is a generic utility to be used as part of your application's data fetching layer to
 > provide a consistent API over various backends and reduce requests to those backends via batching
 > and caching. -- facebook
+
+_DataLoader_ are perfect in various client-side and server-side scenarios. Although, they are
+usually know for solving the `N+1` problem in _GraphQL_ _APIs_. _DataLoader_ decouple any kind of
+request in a simplified way to a backend resource like a database or a web service to reduce the
+overall traffic to those resources by using two common techniques in computer science namely
+batching and caching. With batching we decrease the amount of requests to a backend resource by
+grouping single requests into one batch request. Whereas with caching we avoid requesting a backend
+resource at all.
 
 On the next page we will see how to install _Green Donut_ via _NuGet_.
