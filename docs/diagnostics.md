@@ -3,30 +3,31 @@ id: diagnostics
 title: Diagnostic Events
 ---
 
-This library has recently added _DiagnosticSources_ to offer an _Instrumentation API_ to collect
-diagnostic events. To get started we need to add _two_ packages and implement _two_ classes.
-So lets get started.
+This library has recently added _DiagnosticSources_ to offer an
+_Instrumentation API_ to collect diagnostic events. To get started we need to
+add _two_ packages and implement _two_ classes. So lets get started.
 
 1. We need to add the required packages.
 
-For _.net core_ we use the dotnet CLI. Which is perhaps the most preferred way to do this.
+For _.Net Core_ we use the dotnet CLI. Which is perhaps the most preferred way
+doing this.
 
 ```powershell
 dotnet add package System.Diagnostics.DiagnosticSource
 dotnet add package Microsoft.Extensions.DiagnosticAdapter
 ```
 
-And for _.net classic_ we still use the following line.
+And for _.Net Framework_ we still use the following line.
 
 ```powershell
 Install-Package System.Diagnostics.DiagnosticSource
 Install-Package Microsoft.Extensions.DiagnosticAdapter
 ```
 
-2. After we added those packages we can start implementing the classes to listen to diagnostic
-   events.
+2. After we added those two packages we can start listening to _Green Donut_
+   diagnostic events by implementing a _DiagnosticListener_.
 
-First we implement the Listener.
+First we implement the _DiagnosticListener_.
 
 ```csharp
 using System;
@@ -37,24 +38,24 @@ using Microsoft.Extensions.DiagnosticAdapter;
 
 namespace Demo
 {
-    public class DispatchingListener
+    public class GreenDonutListener
         : DiagnosticListener
     {
         public DispatchingListener()
-            : base("GreenDonut.Dispatching")
+            : base("GreenDonut")
         { }
 
         // here you see the complete set of diagnostic events we can listen to.
-        // here we add just those events we want to listen to.
-        // for example if we are not interested to get informed about values loaded from the cache
-        // then we just remove the complete method.
+        // here we usually add just those events we want to listen to.
+        // for example if we are not interested to get informed about values
+        // loaded from the cache then we just remove the complete method.
 
         [DiagnosticName("ExecuteBatchRequest")]
         public void EnableExecuteBatchRequest()
         {
-            // this event remains empty. it is required to enable the fetch activity.
-            // if you remove this event, ExecuteBatchRequest.Start and ExecuteBatchRequest.Stop
-            // stop working.
+            // this event remains empty. it is required to enable the fetch
+            // activity. if you remove this event, ExecuteBatchRequest.Start and
+            // ExecuteBatchRequest.Stop stop working.
         }
 
         [DiagnosticName("ExecuteBatchRequest.Start")]
@@ -67,13 +68,45 @@ namespace Demo
         [DiagnosticName("ExecuteBatchRequest.Stop")]
         public void HandleExecuteBatchRequestStop(
             IReadOnlyList<object> keys,
-            IReadOnlyList<IResult<object>> results)
+            IReadOnlyList<object> values)
         {
             // here goes our code to handle activity stop.
         }
 
+        [DiagnosticName("ExecuteSingleRequest")]
+        public void EnableExecuteSingleRequest()
+        {
+            // this event remains empty. it is required to enable the fetch
+            // activity. if you remove this event, ExecuteSingleRequest.Start
+            // and ExecuteSingleRequest.Stop stop working.
+        }
+
+        [DiagnosticName("ExecuteSingleRequest.Start")]
+        public void HandleExecuteSingleRequestStart(
+            object key)
+        {
+            // here goes our code to handle activity start.
+        }
+
+        [DiagnosticName("ExecuteSingleRequest.Stop")]
+        public void HandleExecuteSingleRequestStop(
+            object key,
+            IReadOnlyList<object> values)
+        {
+            // here goes our code to handle activity stop.
+        }
+
+        [DiagnosticName("BatchError")]
+        public void HandleBatchError(
+            IReadOnlyList<object> keys,
+            Exception exception)
+        {
+            // here goes our code to handle batch errors which occur during
+            // fetch.
+        }
+
         [DiagnosticName("CachedValue")]
-        public void HandleCachedValue(object key, object value)
+        public void HandleCachedValue(object key, object cacheKey, object value)
         {
             // here goes our code to handle values coming from the cache.
         }
@@ -81,14 +114,16 @@ namespace Demo
         [DiagnosticName("Error")]
         public void HandleError(object key, Exception exception)
         {
-            // here goes our code to handle errors which occur during fetch.
+            // here goes our code to handle result errors which occur during
+            // fetch.
         }
     }
 }
 ```
 
-Then we need to implement an _Observer_ to subscribe to the _DiagnosticSource_ which produces the
-diagnostic events.
+Then we need to implement an _Observer_ to subscribe to the _Green Donut_
+
+_DiagnosticSource_ which produces the diagnostic events.
 
 ```csharp
 using System;
@@ -122,7 +157,7 @@ namespace Demo
 }
 ```
 
-3. Last but not least we must subscribe to the _DiagnosticSource_.
+3. Last but not least we must subscribe to the _Green Donut_ _DiagnosticSource_.
 
 ```csharp
 // subscribe
@@ -136,7 +171,7 @@ subscription.Dispose();
 
 **Note**
 
-> - Remember to dispose your subscription if you would like to stop listening to diagnostic events.
-> - Keep in mind that this code is not production ready. It is meant to give you an idea how it
-
-    works.
+> - Remember to dispose your subscription if you would like to stop listening to
+>   diagnostic events.
+> - Keep in mind that this code is not production ready. It is meant to give you
+>   an idea how it works.

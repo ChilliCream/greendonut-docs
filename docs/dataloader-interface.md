@@ -7,6 +7,31 @@ title: IDataLoader<TKey, TValue>
 
 Represents a minimal set of _DataLoader_ functionality.
 
+## Events
+
+### `RequestBuffered`
+
+**Description:** Raises when an incoming data request is added to the buffer.
+Will never be raised if batching is disabled.
+
+## Properties
+
+### `BufferedRequests`
+
+**Description:** Gets the current count of buffered data requests waiting for
+being dispatched as batches. Will always return `0` if batching is disabled.
+
+**Return Value:** `int`
+
+---
+
+### `CachedValues`
+
+**Description:** Gets the current count of cached values. Will always return `0`
+if caching is disabled.
+
+**Return Value:** `int`
+
 ## Methods
 
 ### `Clear()`
@@ -19,9 +44,10 @@ Represents a minimal set of _DataLoader_ functionality.
 
 ### `DispatchAsync()`
 
-**Description:** Dispatches one or more batch requests. In case of auto dispatching we just trigger
-an implicit dispatch which could mean to interrupt a wait delay. Whereas in a manual dispatch
-scenario it could mean to dispatch explicitly.
+**Description:** Dispatches one or more batch requests. In case of auto
+dispatching we just trigger an implicit dispatch which could mean to interrupt a
+wait delay. Whereas in a manual dispatch scenario it could mean to dispatch
+explicitly.
 
 **Return Value:** `Task`
 
@@ -29,8 +55,8 @@ scenario it could mean to dispatch explicitly.
 
 ### `LoadAsync(TKey key)`
 
-**Description:** Loads a single value by key. This call may return a cached value or enqueues this
-single request for bacthing if enabled.
+**Description:** Loads a single value by key. This call may return a cached
+value or enqueues this single request for bacthing if enabled.
 
 **Return Value:** `Task<TValue>`
 
@@ -38,8 +64,8 @@ single request for bacthing if enabled.
 
 ### `LoadAsync(params TKey[] keys)`
 
-**Description:** Loads multiple values by keys. This call may return cached values and enqueues
-requests which were not cached for bacthing if enabled.
+**Description:** Loads multiple values by keys. This call may return cached
+values and enqueues requests which were not cached for bacthing if enabled.
 
 **Return Value:** `Task<IReadOnlyList<TValue>>`
 
@@ -47,8 +73,8 @@ requests which were not cached for bacthing if enabled.
 
 ### `LoadAsync(IReadOnlyCollection<TKey> keys)`
 
-**Description:** Loads multiple values by keys. This call may return cached values and enqueues
-requests which were not cached for bacthing if enabled.
+**Description:** Loads multiple values by keys. This call may return cached
+values and enqueues requests which were not cached for bacthing if enabled.
 
 **Return Value:** `Task<IReadOnlyList<TValue>>`
 
