@@ -14,7 +14,30 @@
             {"zIndex":100}
           )
         });
-        </script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/signet.svg" alt="Green Donut"/><h2 class="headerTitleWithLogo">Green Donut</h2></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/next/introduction" target="_self">Docs</a></li><li class=""><a href="https://chillicream.com/blog" target="_blank">Blog</a></li><li class=""><a href="https://github.com/ChilliCream/greendonut" target="_blank">GitHub</a></li><li class=""><a target="_self"></a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Advanced Concepts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Quickstart</h3><ul><li class="navListItem"><a class="navItem" href="/docs/next/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/next/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/next/usage">Usage</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul><li class="navListItem"><a class="navItem" href="/docs/next/dataloader-interface">IDataLoader&lt;TKey, TValue&gt;</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced Concepts</h3><ul><li class="navListItem"><a class="navItem" href="/docs/next/custom-dataloader">Custom DataLoader</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/next/diagnostics">Diagnostic Events</a></li></ul></div></div></section></div><script>
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/signet.svg" alt="Green Donut"/><h2 class="headerTitleWithLogo">Green Donut</h2></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/next/introduction" target="_self">Docs</a></li><li class=""><a href="https://chillicream.com/blog" target="_blank">Blog</a></li><li class=""><a href="https://github.com/ChilliCream/greendonut" target="_blank">GitHub</a></li><li class=""><a target="_self"></a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Advanced Concepts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Quickstart</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/next/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/next/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/next/usage">Usage</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/next/dataloader-interface">IDataLoader&lt;TKey, TValue&gt;</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced Concepts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/next/custom-dataloader">Custom DataLoader</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/next/diagnostics">Diagnostic Events</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
             document.addEventListener('DOMContentLoaded', function() {
               createToggler('#navToggler', '#docsNav', 'docsSliderActive');
               createToggler('#tocToggler', 'body', 'tocActive');
@@ -69,19 +92,15 @@ diagnostic events by implementing a <em>DiagnosticListener</em>.</li>
 
 <span class="hljs-keyword">namespace</span> <span class="hljs-title">Demo</span>
 {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">GreenDonutListener</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">CustomListener</span>
         : <span class="hljs-title">DiagnosticListener</span>
     {
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DispatchingListener</span>(<span class="hljs-params"></span>)
-            : <span class="hljs-title">base</span>(<span class="hljs-params"><span class="hljs-string">"GreenDonut"</span></span>)</span>
-        { }
-
         <span class="hljs-comment">// here you see the complete set of diagnostic events we can listen to.</span>
         <span class="hljs-comment">// here we usually add just those events we want to listen to.</span>
         <span class="hljs-comment">// for example if we are not interested to get informed about values</span>
         <span class="hljs-comment">// loaded from the cache then we just remove the complete method.</span>
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"ExecuteBatchRequest"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.ExecuteBatchRequest"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">EnableExecuteBatchRequest</span>(<span class="hljs-params"></span>)</span>
         {
             <span class="hljs-comment">// this event remains empty. it is required to enable the fetch</span>
@@ -89,14 +108,14 @@ diagnostic events by implementing a <em>DiagnosticListener</em>.</li>
             <span class="hljs-comment">// ExecuteBatchRequest.Stop stop working.</span>
         }
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"ExecuteBatchRequest.Start"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.ExecuteBatchRequest.Start"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HandleExecuteBatchRequestStart</span>(<span class="hljs-params">
             IReadOnlyList&lt;<span class="hljs-keyword">object</span>&gt; keys</span>)</span>
         {
             <span class="hljs-comment">// here goes our code to handle activity start.</span>
         }
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"ExecuteBatchRequest.Stop"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.ExecuteBatchRequest.Stop"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HandleExecuteBatchRequestStop</span>(<span class="hljs-params">
             IReadOnlyList&lt;<span class="hljs-keyword">object</span>&gt; keys,
             IReadOnlyList&lt;<span class="hljs-keyword">object</span>&gt; values</span>)</span>
@@ -104,7 +123,7 @@ diagnostic events by implementing a <em>DiagnosticListener</em>.</li>
             <span class="hljs-comment">// here goes our code to handle activity stop.</span>
         }
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"ExecuteSingleRequest"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.ExecuteSingleRequest"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">EnableExecuteSingleRequest</span>(<span class="hljs-params"></span>)</span>
         {
             <span class="hljs-comment">// this event remains empty. it is required to enable the fetch</span>
@@ -112,14 +131,14 @@ diagnostic events by implementing a <em>DiagnosticListener</em>.</li>
             <span class="hljs-comment">// and ExecuteSingleRequest.Stop stop working.</span>
         }
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"ExecuteSingleRequest.Start"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.ExecuteSingleRequest.Start"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HandleExecuteSingleRequestStart</span>(<span class="hljs-params">
             <span class="hljs-keyword">object</span> key</span>)</span>
         {
             <span class="hljs-comment">// here goes our code to handle activity start.</span>
         }
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"ExecuteSingleRequest.Stop"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.ExecuteSingleRequest.Stop"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HandleExecuteSingleRequestStop</span>(<span class="hljs-params">
             <span class="hljs-keyword">object</span> key,
             IReadOnlyList&lt;<span class="hljs-keyword">object</span>&gt; values</span>)</span>
@@ -127,7 +146,7 @@ diagnostic events by implementing a <em>DiagnosticListener</em>.</li>
             <span class="hljs-comment">// here goes our code to handle activity stop.</span>
         }
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"BatchError"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.BatchError"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HandleBatchError</span>(<span class="hljs-params">
             IReadOnlyList&lt;<span class="hljs-keyword">object</span>&gt; keys,
             Exception exception</span>)</span>
@@ -136,13 +155,13 @@ diagnostic events by implementing a <em>DiagnosticListener</em>.</li>
             <span class="hljs-comment">// fetch.</span>
         }
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"CachedValue"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.CachedValue"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HandleCachedValue</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> key, <span class="hljs-keyword">object</span> cacheKey, <span class="hljs-keyword">object</span> <span class="hljs-keyword">value</span></span>)</span>
         {
             <span class="hljs-comment">// here goes our code to handle values coming from the cache.</span>
         }
 
-        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"Error"</span>)</span>]
+        [<span class="hljs-meta">DiagnosticName(<span class="hljs-meta-string">"GreenDonut.Error"</span>)</span>]
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">HandleError</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> key, Exception exception</span>)</span>
         {
             <span class="hljs-comment">// here goes our code to handle result errors which occur during</span>
@@ -151,19 +170,19 @@ diagnostic events by implementing a <em>DiagnosticListener</em>.</li>
     }
 }
 </code></pre>
-<p>Then we need to implement an <em>Observer</em> to subscribe to the <em>Green Donut</em></p>
-<p><em>DiagnosticSource</em> which produces the diagnostic events.</p>
+<p>Then we need to implement an <em>Observer</em> to subscribe to the <em>Green Donut</em>
+<em>DiagnosticSource</em> which produces the diagnostic events.</p>
 <pre><code class="hljs css language-csharp">using System;
 using System.Diagnostics;
 
 namespace Demo
 {
-    public class DispatchingObserver
+    public class CustomObserver
         : IObserver&lt;DiagnosticListener&gt;
     {
-        private readonly DispatchingListener _listener;
+        private readonly CustomListener _listener;
 
-        public DispatchingObserver(DispatchingListener listener)
+        public CustomObserver(CustomListener listener)
         {
             _listener = listener ??
                 throw new ArgumentNullException(nameof(listener));
@@ -175,7 +194,7 @@ namespace Demo
 
         public void OnNext(DiagnosticListener value)
         {
-            if (value.Name == _listener.Name)
+            if (value.Name == "GreenDonut")
             {
                 value.SubscribeWithAdapter(_listener);
             }
@@ -187,8 +206,8 @@ namespace Demo
 <li>Last but not least we must subscribe to the <em>Green Donut</em> <em>DiagnosticSource</em>.</li>
 </ol>
 <pre><code class="hljs css language-csharp"><span class="hljs-comment">// subscribe</span>
-<span class="hljs-keyword">var</span> listener = <span class="hljs-keyword">new</span> DispatchingListener();
-<span class="hljs-keyword">var</span> observer = <span class="hljs-keyword">new</span> DispatchingObserver(listener);
+<span class="hljs-keyword">var</span> listener = <span class="hljs-keyword">new</span> CustomListener();
+<span class="hljs-keyword">var</span> observer = <span class="hljs-keyword">new</span> CustomObserver(listener);
 <span class="hljs-keyword">var</span> subscription = DiagnosticListener.AllListeners.Subscribe(observer);
 
 <span class="hljs-comment">// unsubscribe</span>
@@ -203,7 +222,7 @@ diagnostic events.</li>
 an idea how it works.</li>
 </ul>
 </blockquote>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-1-16 by Rafael Staib</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/custom-dataloader"><span class="arrow-prev">← </span><span class="function-name-prevnext">Custom DataLoader</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/signet.svg" alt="Green Donut" width="64" height="64"/></a><div><h5>Docs</h5><a href="/docs/introduction.html">Quickstart</a><a href="/docs/dataloader-interface.html">API</a><a href="/docs/custom-dataloader.html">Advanced Concepts</a></div><div><h5>Community</h5><a href="https://twitter.com/Chilli_Cream" target="_blank" rel="noreferrer noopener">Follow us on Twitter</a><a href="http://stackoverflow.com/questions/tagged/greendonut" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="https://chillicream.com/blog" target="_blank">Blog</a><a href="https://github.com/ChilliCream/greendonut" target="_blank">GitHub</a><a href="https://github.com/ChilliCream/greendonut/issues" target="_blank">Issues</a><a class="github-button" href="https://github.com/ChilliCream/greendonut" data-icon="octicon-star" data-count-href="/chillicream/greendonut/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 <a href="https://chillicream.com" target="_blank">ChilliCream</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-2-2 by Rafael Staib</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/custom-dataloader"><span class="arrow-prev">← </span><span class="function-name-prevnext">Custom DataLoader</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/signet.svg" alt="Green Donut" width="64" height="64"/></a><div><h5>Docs</h5><a href="/docs/introduction.html">Quickstart</a><a href="/docs/dataloader-interface.html">API</a><a href="/docs/custom-dataloader.html">Advanced Concepts</a></div><div><h5>Community</h5><a href="https://twitter.com/Chilli_Cream" target="_blank" rel="noreferrer noopener">Follow us on Twitter</a><a href="http://stackoverflow.com/questions/tagged/greendonut" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="https://chillicream.com/blog" target="_blank">Blog</a><a href="https://github.com/ChilliCream/greendonut" target="_blank">GitHub</a><a href="https://github.com/ChilliCream/greendonut/issues" target="_blank">Issues</a><a class="github-button" href="https://github.com/ChilliCream/greendonut" data-icon="octicon-star" data-count-href="/chillicream/greendonut/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 <a href="https://chillicream.com" target="_blank">ChilliCream</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
