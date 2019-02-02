@@ -38,19 +38,15 @@ using Microsoft.Extensions.DiagnosticAdapter;
 
 namespace Demo
 {
-    public class GreenDonutListener
+    public class CustomListener
         : DiagnosticListener
     {
-        public DispatchingListener()
-            : base("GreenDonut")
-        { }
-
         // here you see the complete set of diagnostic events we can listen to.
         // here we usually add just those events we want to listen to.
         // for example if we are not interested to get informed about values
         // loaded from the cache then we just remove the complete method.
 
-        [DiagnosticName("ExecuteBatchRequest")]
+        [DiagnosticName("GreenDonut.ExecuteBatchRequest")]
         public void EnableExecuteBatchRequest()
         {
             // this event remains empty. it is required to enable the fetch
@@ -58,14 +54,14 @@ namespace Demo
             // ExecuteBatchRequest.Stop stop working.
         }
 
-        [DiagnosticName("ExecuteBatchRequest.Start")]
+        [DiagnosticName("GreenDonut.ExecuteBatchRequest.Start")]
         public void HandleExecuteBatchRequestStart(
             IReadOnlyList<object> keys)
         {
             // here goes our code to handle activity start.
         }
 
-        [DiagnosticName("ExecuteBatchRequest.Stop")]
+        [DiagnosticName("GreenDonut.ExecuteBatchRequest.Stop")]
         public void HandleExecuteBatchRequestStop(
             IReadOnlyList<object> keys,
             IReadOnlyList<object> values)
@@ -73,7 +69,7 @@ namespace Demo
             // here goes our code to handle activity stop.
         }
 
-        [DiagnosticName("ExecuteSingleRequest")]
+        [DiagnosticName("GreenDonut.ExecuteSingleRequest")]
         public void EnableExecuteSingleRequest()
         {
             // this event remains empty. it is required to enable the fetch
@@ -81,14 +77,14 @@ namespace Demo
             // and ExecuteSingleRequest.Stop stop working.
         }
 
-        [DiagnosticName("ExecuteSingleRequest.Start")]
+        [DiagnosticName("GreenDonut.ExecuteSingleRequest.Start")]
         public void HandleExecuteSingleRequestStart(
             object key)
         {
             // here goes our code to handle activity start.
         }
 
-        [DiagnosticName("ExecuteSingleRequest.Stop")]
+        [DiagnosticName("GreenDonut.ExecuteSingleRequest.Stop")]
         public void HandleExecuteSingleRequestStop(
             object key,
             IReadOnlyList<object> values)
@@ -96,7 +92,7 @@ namespace Demo
             // here goes our code to handle activity stop.
         }
 
-        [DiagnosticName("BatchError")]
+        [DiagnosticName("GreenDonut.BatchError")]
         public void HandleBatchError(
             IReadOnlyList<object> keys,
             Exception exception)
@@ -105,13 +101,13 @@ namespace Demo
             // fetch.
         }
 
-        [DiagnosticName("CachedValue")]
+        [DiagnosticName("GreenDonut.CachedValue")]
         public void HandleCachedValue(object key, object cacheKey, object value)
         {
             // here goes our code to handle values coming from the cache.
         }
 
-        [DiagnosticName("Error")]
+        [DiagnosticName("GreenDonut.Error")]
         public void HandleError(object key, Exception exception)
         {
             // here goes our code to handle result errors which occur during
@@ -122,7 +118,6 @@ namespace Demo
 ```
 
 Then we need to implement an _Observer_ to subscribe to the _Green Donut_
-
 _DiagnosticSource_ which produces the diagnostic events.
 
 ```csharp
@@ -131,12 +126,12 @@ using System.Diagnostics;
 
 namespace Demo
 {
-    public class DispatchingObserver
+    public class CustomObserver
         : IObserver<DiagnosticListener>
     {
-        private readonly DispatchingListener _listener;
+        private readonly CustomListener _listener;
 
-        public DispatchingObserver(DispatchingListener listener)
+        public CustomObserver(CustomListener listener)
         {
             _listener = listener ??
                 throw new ArgumentNullException(nameof(listener));
@@ -148,7 +143,7 @@ namespace Demo
 
         public void OnNext(DiagnosticListener value)
         {
-            if (value.Name == _listener.Name)
+            if (value.Name == "GreenDonut")
             {
                 value.SubscribeWithAdapter(_listener);
             }
@@ -161,8 +156,8 @@ namespace Demo
 
 ```csharp
 // subscribe
-var listener = new DispatchingListener();
-var observer = new DispatchingObserver(listener);
+var listener = new CustomListener();
+var observer = new CustomObserver(listener);
 var subscription = DiagnosticListener.AllListeners.Subscribe(observer);
 
 // unsubscribe
