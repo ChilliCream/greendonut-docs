@@ -39,7 +39,6 @@ using Microsoft.Extensions.DiagnosticAdapter;
 namespace Demo
 {
     public class CustomListener
-        : DiagnosticListener
     {
         // here you see the complete set of diagnostic events we can listen to.
         // here we usually add just those events we want to listen to.
