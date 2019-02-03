@@ -11,7 +11,7 @@ for _.NET Core_ and _.NET Framework_.
 > requests to those backends via batching and caching. -- facebook
 
 _DataLoader_ are perfect in various client-side and server-side scenarios.
-Although, they are usually know for solving the `N+1` problem in *GraphQL*
+Although, they are usually known for solving the `N+1` problem in *GraphQL*
 
 _APIs_. _DataLoader_ decouple any kind of request in a simplified way to a
 backend resource like a database or a web service to reduce the overall traffic
