@@ -7,7 +7,7 @@ The simplest way to get started is to create an instance of the default
 _DataLoader_ implementation, which might be the right choice if you need just
 one type of _DataLoader_. However, if you need a bunch of individual
 _DataLoader_ and/or using _DI_, which is an abbreviation for
-_Dependency Injection_, you might wanne also take a look at the
+_Dependency Injection_, you might want to also take a look at the
 [Custom DataLoader](custom-dataloader.md) section.
 
 #### Create a new instance
@@ -43,7 +43,7 @@ in the original _facebook_ implementation.
 
 #### Fetching data
 
-Fetching data consists of two parts. First part is declaring your need in one or
+Fetching data consists of two parts. The first part is declaring your need in one or
 more data items by providing one or more keys.
 
 ```csharp
@@ -51,7 +51,7 @@ await userLoader.LoadAsync("Foo", "Bar", "Baz");
 ```
 
 The second part is dispatching our requested data items. There are two options.
-First option is _manual dispatching_ the default behavior as of version `2.0.0`.
+The first option is _manual dispatching_ the default behavior as of version `2.0.0`.
 As the name says, _manual dispatching_ means we have to trigger the dispatching
 process manually; otherwise no data is being fetched. This is actually an
 **important difference** to _facebook's_ original implementation, which is
@@ -81,7 +81,7 @@ In this case we wouldn't need to call `DispatchAsync` at all.
 
 **Note**
 
-> - Be careful when and how reusing `DataLoader` instances, becuase sometimes
+> - Be careful when and how reusing `DataLoader` instances, because sometimes
 >   users have different privileges. That implies perhaps a `DataLoader` on a
 >   per request base. However, it really depends on your application logic and
 >   the specific case you try to find a perfect solution for.

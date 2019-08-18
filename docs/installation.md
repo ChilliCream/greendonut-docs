@@ -20,5 +20,5 @@ And for _.NET Framework_ we still use the following line.
 Install-Package GreenDonut
 ```
 
-People who prefer a UI to install packages might wanne use the
+People who prefer a UI to install packages might want to use the
 _NuGet Package Manager_, which is provided by _Visual Studio_.
