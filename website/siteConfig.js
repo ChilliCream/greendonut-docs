@@ -10,6 +10,7 @@
 const repoUrl = "https://github.com/ChilliCream/greendonut";
 const organizationUrl = "https://chillicream.com";
 const blogUrl = organizationUrl + "/blog";
+const shopUrl = "https://shop.chillicream.com";
 
 const siteConfig = {
   title: "Green Donut",
@@ -19,6 +20,7 @@ const siteConfig = {
   baseUrl: "/",
   blogUrl,
   repoUrl,
+  shopUrl,
   gaTrackingId: "UA-72800164-4",
   projectName: "greendonut-docs",
   realProjectName: "greendonut",
@@ -33,6 +35,11 @@ const siteConfig = {
     {
       href: blogUrl,
       label: "Blog",
+      external: true
+    },
+    {
+      href: shopUrl,
+      label: "Shop",
       external: true
     },
     {
